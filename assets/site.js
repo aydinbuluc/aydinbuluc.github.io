@@ -4,6 +4,7 @@
   if (!search) return;
   const year = document.querySelector('#paper-year');
   const papers = [...document.querySelectorAll('.publication')];
+  const groups = [...document.querySelectorAll('.publication-year')];
   const count = document.querySelector('#paper-count');
   const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i').toLowerCase();
   const records = papers.map(node => ({node, text: normalize(node.textContent)}));
@@ -21,6 +22,9 @@
       if (matches) visible++;
     });
     count.textContent = `${visible} of ${papers.length} publications`;
+    groups.forEach(group => {
+      group.hidden = !papers.some(paper => paper.dataset.year === group.dataset.year && !paper.hidden);
+    });
     document.querySelector('#no-results').hidden = visible > 0;
   }
   search.addEventListener('input', filter);
