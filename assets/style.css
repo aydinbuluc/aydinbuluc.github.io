@@ -12,3 +12,7 @@
 .publication-year .publications{margin-bottom:36px}
 .pub-links{font-size:12px;margin:9px 0 0;display:flex;flex-wrap:wrap;gap:10px}
 .publication h3,.authors,.venue{overflow-wrap:anywhere}
+.recorded-talk{padding:28px 0;border-bottom:1px solid var(--line)}
+.recorded-talk h2{font-size:26px;max-width:890px;margin-bottom:14px}
+.recorded-talk>p:not(.eyebrow){font-size:14px;color:var(--muted)}
+.recorded-talk .inline-links{flex-wrap:wrap;gap:12px 24px}
